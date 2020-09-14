@@ -33,7 +33,7 @@ __Take a screenshot of your kafka-console-consumer output. You will need to incl
 * Take a screenshot of the Spark Streaming UI as the streaming continues. __You will need to include this screenshot as part of your project submission.__
 
 #### Progress reporter
-![Alt text](screenshots/progress-reporter.jpg)
+![Alt text](screenshots/progress-reporter2.jpg)
 
 #### Spark Streaming UI
 ![Alt text](screenshots/spark-ui.jpg)
@@ -45,5 +45,7 @@ Write the answers to these questions in the README.md doc of your GitHub repo:
 2. What were the 2-3 most efficient SparkSession property key/value pairs? Through testing multiple variations on values, how can you tell these were the most optimal?
 
 #### Answer 1
+Throughput and latency are strongly related to the `inputRowsPerSecond` and `processedRowsPerSecond` parameters from the Progress Reporter. Changing values on the SparkSession properties made an impact in these two parameters.
 
 #### Answer 2
+My tests where limited by the local mode execution. However, some tests allowed me to realized that parameters like `spark.executor.memory`, `spark.driver.memory` and `spark.executor.cores` increases performance significantly, processing more rows per second.
